@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Finance Kids - Disciplina e Finanças</title>
+
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Candal|Alegreya+Sans">
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/imagehover.min.css">
+  <link rel="stylesheet" type="text/css" href="css/cruds.css">
+  <link rel="stylesheet" type="text/css" href="css/simple-sidebar.css">
+</head>
+
+<body>
+  <div id="wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+      <a href="#menu-toggle" class="btn btn-secondary fa fa-bars" id="menu-toggle"></a>
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <span>Nome do pai</span>
+            </li>
+            <li>
+                <a href="lobby-account.html">Início</a>
+            </li>
+            <li>
+                <a href="lobby-admin.html">Tarefas Listas</a>
+            </li>
+            <li>
+                <a href="tasks.html">Gerenciar Tarefas</a>
+            </li>
+            <li>
+                <a href="rewards.html">Gerenciar Recompensas</a>
+            </li>
+            <li>
+                <a href="accounts.html">Gerenciar Contas</a>
+            </li>
+            <li>
+                <hr />
+            </li>
+            <li>
+                <a href="#">Configurações</a>
+            </li>
+            <li>
+                <a href="#">Ajuda</a>
+            </li>
+            <li>
+                <a href="#">Sair</a>
+            </li>
+        </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+    <section id="tasks-list" class="section-padding">
+      <div class="container">
+          <div class="table-wrapper">
+            <div class="table-title">
+              <div class="row">
+                <div class="col-sm-6">
+                  <h2>Tarefas <b>Ativas</b></h2>
+                </div>
+              </div>
+            </div>
+            <table class="table table-striped table-hover">
+              <thead class="no-crud">
+                <tr>
+                  <th>Descrição</th>
+                  <th>Pontos</th>
+                  <th>Nomes</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="task-lists">
+              </tbody>
+            </table>
+          </div>
+      </div>
+    </section>
+</div>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.easing.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/custom.js"></script>
+  <script src="contactform/contactform.js"></script>
+  <script src="js/lobby.js"></script>
+
+</body>
+
+</html>

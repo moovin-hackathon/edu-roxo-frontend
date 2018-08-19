@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Finance Kids - Disciplina e Finanças</title>
+
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Candal|Alegreya+Sans">
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/imagehover.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+  <!--Navigation bar-->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="btn-trial"><a href="#">Sair</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--/ Navigation bar-->
+
+  <section id="" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="header-section text-center">
+          <h2>Selecione a conta</h2>
+          <hr class="bottom-line">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-2 col-sm-offset-5 text-center">
+          <a href="javascript:void(0)" class="thumbnail" data-target="#password" data-toggle="modal">
+            <img src="https://i.pinimg.com/originals/6a/45/e6/6a45e6991b87d17e413deba7ca283d48.jpg" alt="...">
+            <div class="caption text-center">
+              <h3>Nicolas</h3>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="users-thumbs">
+        <div class="col">
+          <a href="lobby-user.html?user=1" class="thumbnail">
+            <img src="https://i.pinimg.com/originals/6a/45/e6/6a45e6991b87d17e413deba7ca283d48.jpg" alt="...">
+            <div class="caption text-center">
+              <h3>Nicolas</h3>
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a href="lobby-user.html?user=2" class="thumbnail">
+            <img src="https://i.pinimg.com/originals/6a/45/e6/6a45e6991b87d17e413deba7ca283d48.jpg" alt="...">
+            <div class="caption text-center">
+              <h3>Nicolas</h3>
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a href="lobby-user.html?user=3" class="thumbnail">
+            <img src="https://i.pinimg.com/originals/6a/45/e6/6a45e6991b87d17e413deba7ca283d48.jpg" alt="...">
+            <div class="caption text-center">
+              <h3>Nicolas</h3>
+            </div>
+          </a>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--Modal box-->
+  <div class="modal fade" id="password" role="dialog">
+    <div class="modal-dialog modal-sm">
+
+      <!-- Modal content no 1-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title text-center form-title">Login</h4>
+        </div>
+        <div class="modal-body padtrbl">
+
+          <div class="login-box-body">
+            <p class="login-box-msg">Informe a senha deste usuário</p>
+            <div class="form-group">
+              <form name="" id="loginForm">
+                <div class="form-group has-feedback">
+                  <!----- password -------------->
+                  <input class="form-control" placeholder="Senha" id="loginpsw" type="password" autocomplete="off" />
+                  <span style="display:none;font-weight:bold; position:absolute;color: grey;position: absolute;padding:4px;font-size: 11px;background-color:rgba(128, 128, 128, 0.26);z-index: 17;  right: 27px; top: 5px;" id="span_loginpsw"></span>
+                  <!---Alredy exists  ! -->
+                  <span class="fa fa-lock form-control-feedback"></span>
+                </div>
+                <div class="row">
+                  <div class="col-xs-12">
+                    <button type="button" class="btn btn-green btn-block btn-flat" onclick="Lobby.requestPassword()">Logar</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!--/ Modal box-->
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.easing.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/custom.js"></script>
+  <script src="contactform/contactform.js"></script>
+  <script src="js/lobby.js"></script>
+
+</body>
+
+</html>
