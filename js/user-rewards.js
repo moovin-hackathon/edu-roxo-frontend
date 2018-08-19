@@ -36,6 +36,7 @@ var UserRewards = {
                     dataType: 'json'
                 }).success(function(data) {
                     alert(data.message);
+                    UserRewards.getLists();
                 });
             })
 
