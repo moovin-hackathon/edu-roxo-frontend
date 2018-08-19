@@ -71,12 +71,14 @@ var Tasks = {
     },
 
     submitNewTask : function(){
-        var dataJson = JSON.stringify($(this).serializeObject());
-        console.log(dataJson);
-         $.ajax({
+        var dataJson = $(this).serializeObject();
+        if(typeof(dataJson.children) == 'string'){
+            dataJson.children = [dataJson.children];
+        }
+        $.ajax({
             url: "http://192.168.1.91:8080/model_tasks",
             method: "POST",
-            data: dataJson,
+            data: JSON.stringify(dataJson),
             contentType: "application/json;charset=utf-8",
             dataType: 'json'
         }).success(function(data) {

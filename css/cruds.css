@@ -191,6 +191,11 @@ table.table .avatar {
 	box-shadow: none;
 	background: #ddd;
 }
+
+#rewards-list img {
+    max-width: 200px;
+    max-height: 200px;
+}
 /* Modal styles */
 .modal .modal-dialog {
 	max-width: 400px;

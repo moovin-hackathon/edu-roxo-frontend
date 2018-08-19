@@ -78,28 +78,14 @@
                       <label for="selectAll"></label>
                     </span>
                   </th>
-                  <th>Foto</th>
+                  <th>Imagem</th>
                   <th>Descrição</th>
                   <th>Pontos</th>
+                  <th>Disponibilidade</th>
                   <th>Ações</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <span class="custom-checkbox">
-                      <input type="checkbox" id="checkbox1" name="options[]" value="1">
-                      <label for="checkbox1"></label>
-                    </span>
-                  </td>
-                  <td><img src="" class="fa fa-image"></td>
-                  <td>Dinheiro</td>
-                  <td>100</td>
-                  <td>
-                    <a href="#deleteModal" class="delete" data-toggle="modal"><i class="fa fa-times" data-toggle="tooltip" title="Deletar"></i></a>
-                  </td>
-                </tr>
-              </tbody>
+              <tbody id="rewards-list"></tbody>
             </table>
           </div>
         </div>
@@ -108,7 +94,7 @@
         <div id="addModal" class="modal fade">
           <div class="modal-dialog">
             <div class="modal-content">
-              <form>
+              <form id="rewardForm">
                 <div class="modal-header">
                   <h4 class="modal-title">Adicionar recompensa</h4>
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -116,18 +102,15 @@
                 <div class="modal-body">          
                   <div class="form-group">
                     <label>Descrição</label>
-                    <input type="text" class="form-control" required>
+                    <input type="text" name="description" class="form-control" required>
                   </div>
                   <div class="form-group">
                     <label>Pontos</label>
-                    <input type="number" class="form-control" required>
+                    <input type="number" name="points" class="form-control" required>
                   </div>
-                  <div class="input-group">
-                    <span class="input-group-btn">
-                      <span class="btn btn-primary" onclick="$(this).parent().find('input[type=file]').click();">Browse</span>
-                      <input name="uploaded_file" onchange="$(this).parent().parent().find('.form-control').html($(this).val().split(/[\\|/]/).pop());" style="display: none;" type="file">
-                    </span>
-                    <span class="form-control"></span>
+                  <div class="form-group">
+                    <label>URL da imagem</label>
+                    <input name="image" type="text" class="form-control">
                   </div>
                 </div>
                 <div class="modal-footer">
@@ -138,47 +121,12 @@
             </div>
           </div>
         </div>
-        <!-- Edit Modal HTML -->
-        <div id="editModal" class="modal fade">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <form>
-                <div class="modal-header">            
-                  <h4 class="modal-title">Editar recompensa</h4>
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                </div>
-                <div class="modal-body">
-                  <div class="form-group">
-                    <label>Descrição</label>
-                    <input type="text" class="form-control" required>
-                  </div>
-                  <div class="form-group">
-                    <label>Pontos</label>
-                    <input type="number" class="form-control" required>
-                  </div>
-
-                  <div class="input-group" style="overflow: hidden">
-                    <span class="input-group-btn">
-                      <span class="btn btn-primary" onclick="$(this).parent().find('input[type=file]').click();">Browse</span>
-                      <input name="uploaded_file" onchange="$(this).parent().parent().find('.form-control').html($(this).val().split(/[\\|/]/).pop());" style="display: none;" type="file">
-                    </span>
-                    <span class="form-control"></span>
-                  </div>
-   
-                </div>
-                <div class="modal-footer">
-                  <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-                  <input type="submit" class="btn btn-info" value="Salvar">
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
+ 
         <!-- Delete Modal HTML -->
         <div id="deleteModal" class="modal fade">
           <div class="modal-dialog">
             <div class="modal-content">
-              <form>
+              <form id="deleteRewardForm">
                 <div class="modal-header">            
                   <h4 class="modal-title">Deletar tarefa</h4>
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -206,6 +154,7 @@
   <script src="js/custom.js"></script>
   <script src="contactform/contactform.js"></script>
   <script src="js/cruds.js"></script>
+  <script src="js/rewards.js"></script>
   <script src="js/bootstrap-select.js"></script>
 
 </body>

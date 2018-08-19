@@ -711,6 +711,28 @@ Footer
 #user-tasks-area .task-points{
     font-size: 20px;
 }
+#user-rewards-lists .thumbnail {
+    position: relative;
+}
+#user-rewards-lists .thumbnail .floating-buy {
+    width: 200px;
+    height: 50px;
+    background-color: red;
+    font-size: 20px;
+    text-align: center;
+    line-height: 50px;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#user-rewards-lists .thumbnail:hover {
+    background-color: rgba(0, 0, 0, .55);
+}
+#user-rewards-lists .thumbnail:hover .floating-buy {
+    display: block;
+}
 /***********************************
 ************************************
 Responsive media queries
