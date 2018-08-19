@@ -1,6 +1,7 @@
 var LobbyUser = {
     init : function() {
         LobbyUser.getLists();
+        LobbyUser.getProfile();
     },
 
     getLists : function() {
@@ -23,6 +24,35 @@ var LobbyUser = {
 
             $('#user-tasks-lists').html(item);
 
+        });
+    },
+    getProfile : function() {
+        var url = new URL(window.location.href);
+        var profileId = url.searchParams.get('profileId');
+
+        if (!profileId) {
+            return false
+        }
+
+        $.ajax({
+            url: "http://192.168.1.91:8080/profiles/" + profileId,
+            dataType: 'json'
+        }).success(function(profile) {
+
+            $('#profileName').html(profile.name)
+
+            if (profile.type === 'child') {
+                $('#profilePoints').parent().parent().show()
+                $('#profilePoints').html(profile.points)
+
+                const hrefRewards = $('#profileRewardsLink').attr('href') + '?profileId=' + profileId
+                $('#profileRewardsLink').attr('href', hrefRewards)
+                $('#profileRewardsLink').parent().show()
+
+                const hrefListTasks = $('#listTasksLink').attr('href') + '?profileId=' + profileId
+                $('#listTasksLink').attr('href', hrefListTasks)
+                $('#listTasksLink').parent().show()
+            }
         });
     },
 

@@ -5,7 +5,7 @@ var UserRewards = {
 
     getLists : function() {
         $.ajax({
-            url: "http://192.168.1.91:8080/model_rewards",
+            url: "http://192.168.1.91:8080/rewards",
             dataType: 'json'
         }).success(function(data) {
             var item = '';
