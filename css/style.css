@@ -717,10 +717,12 @@ Footer
 #user-rewards-lists .thumbnail .floating-buy {
     width: 200px;
     height: 50px;
-    background-color: red;
+    background-color: #993399;
+    color: #FFF;
     font-size: 20px;
     text-align: center;
     line-height: 50px;
+    cursor: pointer;
     display: none;
     position: absolute;
     top: 50%;
@@ -728,7 +730,7 @@ Footer
     transform: translate(-50%, -50%);
 }
 #user-rewards-lists .thumbnail:hover {
-    background-color: rgba(0, 0, 0, .55);
+    border-color: #993399;
 }
 #user-rewards-lists .thumbnail:hover .floating-buy {
     display: block;

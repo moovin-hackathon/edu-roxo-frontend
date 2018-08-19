@@ -13,7 +13,7 @@ var Lobby = {
             var item = '';
             $.each(data, function(id, value){
                 item += '<div class="col">'+
-                (value.type == 'admin' ? ('<a href="javascript:void(0)" class="thumbnail" data-target="#password" data-toggle="modal">') : ('<a href="lobby-user.html?user='+value._id+'" class="thumbnail">'))+
+                (value.type == 'admin' ? ('<a href="javascript:void(0)" class="thumbnail" data-target="#password" data-toggle="modal">') : ('<a href="lobby-user.html?profileId='+value._id+'" class="thumbnail">'))+
                 '<div class="fa fa-user-circle"></div>'+
                 '<div class="caption text-center">'+
                 '<h3>'+value.name+'</h3>'+
