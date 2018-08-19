@@ -1,59 +1,30 @@
 var Lobby = {
     init : function() {
-        Lobby.getAlgumaCoisa();
+        Lobby.getLists();
 
         $('table .btn-group button').click(Lobby.changeStatus);
     },
 
-    userlogin : function(){
-        console.log('ola mundo');
-    },
-
-    getAlgumaCoisa : function() {
-        // $.ajax({
-        //     url: "http://192.168.1.91:8080/task",
-        //     dataType: 'json'
-        // }).success(function(data) {
-        //     console.log(data);
-            var tabelaLinha = '',
-                linha = 0;
-
-            var objects = {
-                1: {
-                    'descricao' : 'Lavar Louça',
-                    'pontos' : '20',
-                    'nome' : 'Fulano',
-                    'status' : 0
-                },
-                2: {
-                    'descricao' : 'Arrumar cama',
-                    'pontos' : '10',
-                    'nome' : 'Beltrano',
-                    'status' : 2
-                },
-                3: {
-                    'descricao' : 'Escovar os dentes',
-                    'pontos' : '5',
-                    'nome' : 'Beltrano',
-                    'status' : 1
-                }
-            }
-
-            $.each(objects, function(id, value){
-                tabelaLinha += '<tr>' +
-                '<td>'+value.descricao+'</td>'+
-                '<td>'+value.pontos+'</td>' +
-                '<td>'+value.nome+'</td>'+
-                '<td><div class="btn-group" role="group">'+
-                '<button type="button" class="btn btn-default'+(value.status == 1 ? ' btn-success' : ' btn-error')+'">Feito</button>'+
-                '<button type="button" class="btn btn-default'+(value.status == 2 ? ' btn-success' : ' btn-error')+'">Não feito</button>'+
-                '</div></td>'+
-                '</tr>';
+    getLists : function() {
+        $.ajax({
+            url: "http://192.168.1.93:8080/profiles",
+            dataType: 'json'
+        }).success(function(data) {
+            var item = '';
+            $.each(data, function(id, value){
+                item += '<div class="col">'+
+                (value.type == 'admin' ? ('<a href="javascript:void(0)" class="thumbnail" data-target="#password" data-toggle="modal">') : ('<a href="lobby-user.html?user='+value._id+'" class="thumbnail">'))+
+                '<div class="fa fa-user-circle"></div>'+
+                '<div class="caption text-center">'+
+                '<h3>'+value.name+'</h3>'+
+                '</div>'+
+                '</a>'+
+                '</div>';
             });
 
-            $('#task-lists').html(tabelaLinha);
+            $('.users-thumbs').html(item);
 
-        // });
+        });
     },
 
     changeStatus : function(){

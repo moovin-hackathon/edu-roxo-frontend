@@ -682,10 +682,34 @@ Footer
 .users-thumbs .col{
     display: inline-block;
     margin: 0 15px;
+    width: 170px;
 }
-.users-thumbs .col img{
-    max-width: 145px;
-    max-height: 145px;
+.users-thumbs .col .fa-user-circle{
+    font-size: 100px;
+    text-align: center;
+    display: block;
+    line-height: 125px;
+}
+.users-thumbs .col a:hover{
+    text-decoration: none;
+}
+#user-tasks-area .image-task {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 170px;
+    line-height: 350px;
+    text-align: center;
+}
+#user-tasks-area img {
+    width: 350px;
+    height: 350px;
+}
+#user-tasks-area .task-points{
+    font-size: 20px;
 }
 /***********************************
 ************************************

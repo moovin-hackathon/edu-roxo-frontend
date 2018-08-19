@@ -9,7 +9,7 @@ var Tasks = {
 
     getLists : function() {
         $.ajax({
-            url: "http://192.168.1.91:8080/model_tasks",
+            url: "http://192.168.1.93:8080/model_tasks",
             dataType: 'json'
         }).success(function(data) {
             
@@ -18,6 +18,17 @@ var Tasks = {
 
             $.each(data, function(id, value){
                 count++;
+                
+
+                if(typeof(value.children) !== 'undefined'){
+                    if(value.children.length == 0){
+                        children = 'Nenhum';
+                    } else {
+                        children = value.children.join(', ');
+                    }
+                } else {
+                    children = 'Nenhum';
+                }
                 tabelaLinha += '<tr>' +
                 '<td>'+
                 '<span class="custom-checkbox">'+
@@ -27,7 +38,7 @@ var Tasks = {
                 '</td>'+
                 '<td>'+value.description+'</td>'+
                 '<td>'+value.points+'</td>' +
-                '<td>'+(value.children.length == 0 ? 'Nenhum' : value.children.join(', '))+'</td>'+
+                '<td>'+children+'</td>'+
                 '<td>'+
                 '<a href="#deleteModal" data-id="'+value._id+'" class="delete delete-task" data-toggle="modal"><i class="fa fa-times" data-toggle="tooltip" title="Deletar"></i></a>'+
                 '</td>'+
@@ -41,10 +52,27 @@ var Tasks = {
             });
 
         });
+
+        $.ajax({
+            url: "http://192.168.1.93:8080/profiles",
+            dataType: 'json'
+        }).success(function(data) {
+            var children = '',
+                count = 0;
+            $.each(data, function(id, value){
+                count++;
+                if(value.type != 'admin'){
+                    children += '<div class="custom-checkbox"><input type="checkbox" name="children" id="custom-check-'+count+'" class="custom-control-input" value="'+value.name+'"/><label for="custom-check-'+count+'">'+value.name+'</label></div>';
+                }
+            });
+            $('#childrenNames').append(children);
+        });
+            
     },
 
     submitNewTask : function(){
         var dataJson = JSON.stringify($(this).serializeObject());
+        console.log(dataJson);
          $.ajax({
             url: "http://192.168.1.91:8080/model_tasks",
             method: "POST",
